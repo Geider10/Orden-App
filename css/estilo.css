@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 1200px;
+    margin: 0 auto;
+    font-family:sans-serif;
+}
+a{
+    text-decoration: none;
+    color:#030303 ;
+}
+
+nav{
+    background-color: #fb6107;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+.content__logo{
+    width: 100px;
+    height: 40px;
+}
+.content__logo .logo__img img{
+    width: 100%;
+    height: 100%;
+}
+.content__paginas{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.content__paginas .modo{
+    background-color: #030303;
+    border-radius: 50%;
+    padding: 5px;
+}
+/*header tablero*/
+.content__tablero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tablero__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: #fbb02d;
+    width: 100%;
+    padding: 5px;
+}
+.tablero__header input{
+    background: none;
+    padding: 5px 10px;
+    width: 300px;
+}
+.tablero__header select{
+    padding: 5px;
+    display: inline-block;
+    background:none;
+}
+.tablero__header option{
+    display: block;
+    padding: 5px;
+}
+.btn__star{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.btn{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.g{
+    background-color:#7cb518;
+}
+/* body tablero*/
+.body__tablero{
+    background-color: #5c8001;
+    width: 100%;
+    padding: 10px;
+}
+.tablero__lista{
+    background-color: beige;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.lista__nombre{
+    text-align: center;
+}
+.lista__nombre input{
+    background: none;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    border: none;
+}
+.lista__tarea{
+    background-color: #fefefe;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top:10px;
+ 
+}
+.lista__tarea span{
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 5px;
+}
+.lista__tarea textarea{
+    background: none;
+    width: 100%;
+    font-size: 1rem;
+    height: 50px;
+    outline: none;
+    resize: none;
+    border:none;
+    max-height: 200px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    padding: 5px;
+}
+textarea:is(:focus,:valid){
+    border: 1px solid black;
+}
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
