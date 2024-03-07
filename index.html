@@ -14,7 +14,7 @@
     <ul class="content__paginas">
       <li> <a href="#">Home</a></li>
       <li> <a href="#">Plantillas</a></li>
-      <li> <a href="#">Consejos</a></li>
+      <li> <a href="#">IA</a></li>
       <li> <a href="#" class="modo">🌜</a></li>
     </ul>
   </nav>
@@ -23,12 +23,12 @@
    <section class="content__tablero">
    
     <section class="tablero__header">
-      <input type="text" placeholder="Definí el titulo">
-      <select name="" id="">
+      <input type="text" placeholder="Definí el titulo" id="iptTitulo">
+      <select name="" id="typeTitulo">
         <option >Tarea</option>
         <option >Lista</option>
       </select>
-      <button class="btn g">Agregar</button>
+      <button class="btn g" id="btnAgregar">Agregar</button>
       <span>
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star btn__star" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -42,14 +42,14 @@
         <div class="lista__nombre">
           <input type="text" value="Soy una lista" readonly="true">
         </div>
-        <div class="lista__tarea">
+        <!-- <div class="lista__tarea">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" /><path d="M13.5 6.5l4 4" /></svg>
           </span>
           <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg></span>
           <textarea placeholder="Nombre de la tarea" required id="area"></textarea>
          
-        </div>
+        </div> -->
 
       </div>
     </section>
