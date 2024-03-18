@@ -1,3 +1,4 @@
+//import Sortable from 'sortablejs';
 const d = document;
 const btnAgregar = d.getElementById("btnAgregar");
 const iptTitulo = d.getElementById("iptTitulo");
@@ -59,8 +60,14 @@ const autoSizeTxt =()=>{
     })
 
 }
+const tareas = document.getElementsByClassName("tablero__lista");
 // txtArea.addEventListener("keyup",e=>{
 //     txtArea.style.height = "54px";
 //     let scHeight = e.target.scrollHeight;
 //     txtArea.style.height = `${scHeight}px`;
 // })
+// PROBLEMA 
+new Sortable(tareas, {
+    animation: 150,
+    ghostClass: 'blue-background-class'
+});
