@@ -7,20 +7,21 @@ body{
     width: 1200px;
     margin: 0 auto;
     font-family:sans-serif;
+    color: #f9f9f9;
 }
 a{
     text-decoration: none;
-    color:#030303 ;
+    color: #f9f9f9;
 }
 
 nav{
-    background-color: #fb6107;
+    background-color: #5a5a5ac4;
     display: flex;
     justify-content: space-between;
-    padding: 10px 30px;
+    padding: 10px 20px;
 }
 .content__logo{
-    width: 100px;
+    width: 40px;
     height: 40px;
 }
 .content__logo .logo__img img{
@@ -36,66 +37,58 @@ nav{
     cursor: pointer;
 }
 .content__paginas .modo{
-    background-color: #030303;
+    background-color: #5a5a5a;
     border-radius: 50%;
-    padding: 5px;
+    padding: 2px;
 }
 /*header tablero*/
 .content__tablero{
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #f9f9f9;
+
 }
 .tablero__header{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: #fbb02d;
+    background: #7c7c7cc4;
     width: 100%;
-    padding: 5px;
-}
-.tablero__header .header__txt{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    padding: 10px 0px;
+    color: #f9f9f9;
 }
 .tablero__header input{
     background: none;
     padding: 5px 10px;
     width: 300px;
-}
-.tablero__header  .header__txt span{
-    background-color: red;
-    cursor: pointer;
+    /* color: currentColor; */
+
 }
 .tablero__header select{
     padding: 5px;
     display: inline-block;
     background:none;
+    /* color: currentColor; */
 }
 .tablero__header option{
     display: block;
     padding: 5px;
-}
-.btn__star{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
 }
 .btn{
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
+    color: currentColor;
 }
 .g{
-    background-color:#7cb518;
+    background-color:#6a9e0f;
 }
 /* body tablero*/
 .body__tablero{
-    background-color: #5c8001;
+    background-color: #505c33ad;
     width: 100%;
     height: 80vh;
     padding: 10px;
@@ -103,14 +96,16 @@ nav{
     overflow-x: auto;
     justify-items: center;
     gap: 30px;
+    color: #f9f9f9;;
 }
 .tablero__lista{
-    background-color: beige;
+    background-color:  #3a3d33e3;
     min-width: 300px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     min-height: 500px;
     overflow-y: auto;
+    /* color: #f9f9f9; */
 }
 .lista__nombre{
     display: flex;
@@ -125,12 +120,13 @@ nav{
     font-weight: bold;
     border: none;
     width: 100%;
+    color: currentColor;
 }
 .lista__nombre span{
     cursor: pointer;
 }
 .lista__tarea{
-    background-color: #e9e9e9;
+    background-color: #6e6d6db6;
     border-radius: 10px;
     padding: 10px;
     margin-top:10px;
@@ -139,10 +135,10 @@ nav{
 .lista__tarea .tarea__icons{
     display: flex;
     justify-content: end;
+    gap: 3px;
 }
-.lista__tarea span{
+.lista__tarea svg{
     cursor: pointer;
-    padding-left: 5px;
 }
 /* nombre la tarea de lista */
 textarea{
@@ -157,6 +153,7 @@ textarea{
     font-family: sans-serif;
     border-radius: 5px;
     padding: 5px;
+    color: currentColor;
 }
 textarea:checked{
     border: red;
@@ -169,4 +166,14 @@ textarea::-webkit-scrollbar{
 }
 .off{
     display: none;
+}
+
+.colorLight{
+    color: #1b1b1b;
+}
+.taskLight{
+    background-color: #e9e9e9;
+}
+.listLight{
+    background-color: beige;
 }

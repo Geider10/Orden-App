@@ -7,34 +7,33 @@
     <title>Trello - Home</title>
 </head>
 <body>
-  <nav>
-    <div class="content__logo">
-      <a href="#" class="logo__img"><img src="https://labyes.com/wp-content/uploads/2020/07/06Jul_LabyesNotaWeb-600x401.png" alt="gato mirando atento"></a>
-    </div>
-    <ul class="content__paginas">
-      <li> <a href="#">Home</a></li>
-      <li> <a href="#">Plantillas</a></li>
-      <li> <a href="#">IA</a></li>
-      <li> <a href="#" class="modo">🌜</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <div class="content__logo">
+        <a href="#" class="logo__img"><img src="https://cdn.icon-icons.com/icons2/3041/PNG/512/trello_logo_icon_189227.png" alt="Logo de la app"></a>
+      </div>
+      <ul class="content__paginas">
+        <li> <a href="#"  data-colorLight> Inicio</a></li>
+        <li> <a href="#"  data-colorLight>Tableros</a></li>
+        <li> <a href="#"  data-colorLight>IA</a></li>
+        <li> <a href="#" class="modo" id="btnMode"  data-colorLight>☀️</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
    <section class="content__tablero">
    
     <section class="tablero__header">
-      <select name="" id="typeTitulo">
-        <option >Lista</option>
-        <option disabled>Tarea</option>
+      <select name="" id="typeTitulo" data-colorLight>
+        <option  data-colorLight>Lista</option>
+        <option disabled data-colorLight>Tarea</option>
       </select>
-      <div class="header__txt">
-        <input type="search" placeholder="Definí el titulo" id="iptTitulo">
-        <span hidden><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg></span>
-      </div>
-      <button class="btn g" id="btnAgregar">Crear</button>
+      <input type="search" placeholder="Definí el titulo" id="iptTitulo" data-colorLight>
+      <button class="btn g" id="btnAgregar" data-colorLight>Crear</button>
     </section>
 
-    <section class="body__tablero" id="bodyTablero">
+    <section class="body__tablero" id="bodyTablero" data-colorLight>
     </section>
 
    </section>
