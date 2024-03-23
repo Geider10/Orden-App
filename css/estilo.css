@@ -103,15 +103,14 @@ nav{
     min-width: 300px;
     padding: 10px;
     border-radius: 10px;
-    min-height: 500px;
-    overflow-y: auto;
-    /* color: #f9f9f9; */
+    /* min-height: 500px; */
+   
 }
 .lista__nombre{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     gap: 3px;
+    position: relative;
+    margin-bottom: 5px;
 }
 /* nombre de la lista */
 .lista__nombre input{ 
@@ -122,26 +121,66 @@ nav{
     width: 100%;
     color: currentColor;
 }
-.lista__nombre span{
-    cursor: pointer;
+.lista__nombre input:target{
+    border: none;
 }
+.lista__nombre details summary{
+    list-style: none;
+}
+.lista__nombre details ul{
+    background-color:  #8d8d8de3;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    right: -100px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+}
+.lista__nombre details ul li{ margin-bottom: 5px; cursor: pointer;}
+.content__tareas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 500px;
+    overflow-y: auto;
+}
+/* tarea */
 .lista__tarea{
     background-color: #6e6d6db6;
     border-radius: 10px;
-    padding: 10px;
-    margin-top:10px;
- 
-}
-.lista__tarea .tarea__icons{
-    display: flex;
-    justify-content: end;
-    gap: 3px;
+    padding: 5px;
+    display: grid;
+    grid-template-areas: 
+    " o star opciones"
+    "area area area";
+    grid-template-columns: 1fr 25px 25px;
 }
 .lista__tarea svg{
-    cursor: pointer;
+    grid-area: star;
 }
+.lista__tarea details{
+    grid-area: opciones;
+    /* position: relative; */
+}
+.lista__tarea details summary{
+    list-style: none;
+}
+.lista__tarea details ul{
+    background-color:  #8d8d8db2;
+    list-style: none;
+    position: absolute;
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+}
+.lista__tarea details ul li{ margin-bottom: 5px; cursor: pointer;}
 /* nombre la tarea de lista */
-textarea{
+.lista__tarea textarea{
     background: none;
     width: 100%;
     font-size: 1rem;
@@ -154,6 +193,7 @@ textarea{
     border-radius: 5px;
     padding: 5px;
     color: currentColor;
+    grid-area: area;
 }
 textarea:checked{
     border: red;
