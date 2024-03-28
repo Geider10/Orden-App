@@ -101,7 +101,7 @@ nav{
     min-width: 300px;
     padding: 10px;
     border-radius: 10px;
-    /* overflow: hidden; */
+    overflow-y: auto;
     height: 100%;
 }
 .lista__nombre{
@@ -157,6 +157,7 @@ nav{
     " o star opciones"
     "area area area";
     grid-template-columns: 1fr 25px 25px;
+    margin-bottom: 10px;
 }
 .lista__tarea svg{
     grid-area: star;

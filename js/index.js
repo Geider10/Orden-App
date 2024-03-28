@@ -36,12 +36,13 @@ btnAgregar.addEventListener("click",()=>{
             taskLista.classList.add("taskLight");
             iptTt.classList.add("colorLight");
         }
-        bodyTablero.children[0].children[1].appendChild(taskLista);
+        bodyTablero.children[0].appendChild(taskLista);
        
     }
     else if(checkInput(iptTitulo).length >1 && checkTitulos() == "Lista"){
         const tableroLista = d.createElement("div");
         tableroLista.classList.add("tablero__lista");
+        tableroLista.classList.add("listas");
         tableroLista.setAttribute("data-listLight","true");
         tableroLista.innerHTML=//html
         `
@@ -56,7 +57,6 @@ btnAgregar.addEventListener("click",()=>{
                 </ul>
            </details>
         </div>
-        <div class="content__tareas"></div>
         `
         const iptT =tableroLista.children[0].children[0];
         const btnEdit =tableroLista.children[0].children[1].children[1].children[0];
@@ -70,7 +70,7 @@ btnAgregar.addEventListener("click",()=>{
             iptT.classList.add("colorLight");
         }
         bodyTablero.appendChild(tableroLista);
-      
+        addSortListas();
     }
     iptTitulo.value="";
 })
@@ -135,6 +135,15 @@ const destacarTask=(btn, atr)=>{
             btn.setAttribute(atr,"none");
             pintarStar = false;
         }
+    })
+}
+
+const addSortListas =()=>{
+    var listasTablero = d.querySelectorAll(".listas");
+    listasTablero.forEach(l=>{
+        // console.log(l);
+        new Sortable(l,{group:"shared"});
+        // var sor = Sortable.create(l,{group:"shared"});
     })
 }
 const btnMode = d.getElementById("btnMode");
