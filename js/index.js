@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
 const d = document;
 const btnAgregar = d.getElementById("btnAgregar");
 const iptTitulo = d.getElementById("iptTitulo");
@@ -10,11 +9,12 @@ btnAgregar.addEventListener("click",()=>{
     if(checkInput(iptTitulo).length >1 && checkTitulos() == "Tarea"){
         const taskLista = d.createElement("div");
         taskLista.classList.add("lista__tarea");
+        taskLista.classList.add("ancla");
         taskLista.setAttribute("data-taskLight","true");
         taskLista.innerHTML = //html
         `
         <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
-        <details >
+        <details>
             <summary><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></summary>
             <ul>
                <li >Editar</li>
@@ -46,7 +46,7 @@ btnAgregar.addEventListener("click",()=>{
         tableroLista.setAttribute("data-listLight","true");
         tableroLista.innerHTML=//html
         `
-        <div class="lista__nombre">
+        <div class="lista__nombre nombresLista" >
             <input  type="text" value="${checkInput(iptTitulo)}"readonly data-colorLight>
             <details>
                <summary><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></summary>
@@ -71,6 +71,7 @@ btnAgregar.addEventListener("click",()=>{
         }
         bodyTablero.appendChild(tableroLista);
         addSortListas();
+        addSortTablero();
     }
     iptTitulo.value="";
 })
@@ -97,7 +98,7 @@ let editNameTxt = (area,btnEdit,btnCheck,btnDelete,content)=>{
     area.addEventListener("mousedown",(e)=>{
        if(edit == false){
         e.target.style.border = "none";
-        console.log("se bloquea border");
+        // console.log("se bloquea border");
        }
     });
     btnEdit.addEventListener("click",()=>{
@@ -141,10 +142,11 @@ const destacarTask=(btn, atr)=>{
 const addSortListas =()=>{
     var listasTablero = d.querySelectorAll(".listas");
     listasTablero.forEach(l=>{
-        // console.log(l);
-        new Sortable(l,{group:"shared"});
-        // var sor = Sortable.create(l,{group:"shared"});
+        new Sortable(l,{group:"shared",handle:".ancla",animation:150});
     })
+}
+const addSortTablero =()=>{
+    new Sortable(bodyTablero,{sort:"true"});
 }
 const btnMode = d.getElementById("btnMode");
 btnMode.addEventListener("click",(e)=>{
@@ -161,6 +163,7 @@ const changeTema = (tipoTema)=>{
         colorLight.forEach(n => n.classList.add("colorLight"));
         taskLight.forEach(n => n.classList.add("taskLight"));
         listLight.forEach(n => n.classList.add("listLight"));
+        bodyTablero.style.backgroundColor="#335b5cad";
     }
     else if(tipoTema == "dark"){
         btnMode.textContent ="☀️";
@@ -168,10 +171,13 @@ const changeTema = (tipoTema)=>{
         colorLight.forEach(n => n.classList.remove("colorLight"));
         taskLight.forEach(n => n.classList.remove("taskLight"));
         listLight.forEach(n => n.classList.remove("listLight"));
+        bodyTablero.style.backgroundColor="#505c33ad";
+
     }
 }
 localStorage.getItem("tema") == null && localStorage.setItem("tema","dark");
 localStorage.getItem("tema") == "dark" && changeTema("dark");
 localStorage.getItem("tema") == "light" && changeTema("light");
 
+console.log("Hola todo bien");
 });

@@ -39,9 +39,9 @@ nav{
     cursor: pointer;
 }
 .content__paginas .modo{
-    background-color: #5a5a5a;
+    background-color: #5a5a5a34;
     border-radius: 50%;
-    padding: 2px;
+    padding: 1px;
 }
 /*header tablero*/
 .content__tablero{
@@ -87,7 +87,7 @@ nav{
 }
 /* body tablero*/
 .body__tablero{
-    background-color: #505c33ad;
+    /* background-color: #335b5cad; */
     width: 100%;
     height: 93vh;
     padding: 10px 20px;
@@ -107,7 +107,6 @@ nav{
 .lista__nombre{
     display: flex;
     gap: 3px;
-    position: relative;
     margin-bottom: 5px;
     height: 7%;
 }
@@ -130,12 +129,10 @@ nav{
     background-color:  #8d8d8de3;
     list-style: none;
     position: absolute;
-    top: 0;
-    right: -100px;
     width: 100px;
     padding: 10px;
     border-radius: 10px;
-    z-index: 1;
+    z-index: 2;
     text-align: center;;
 }
 .lista__nombre details ul li{ margin-bottom: 5px; cursor: pointer;}
@@ -196,11 +193,15 @@ nav{
     color: currentColor;
     grid-area: area;
 }
+.lista__tarea textarea:hover{
+    /* cursor: grab; */
+}
 textarea:checked{
     border: red;
 }
 textarea:is(:focus,:valid){
     border: 1px solid black;
+    /* cursor: pointer; */
 }
 textarea::-webkit-scrollbar{
     width: 0px;
